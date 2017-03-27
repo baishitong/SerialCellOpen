@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>idd</key>
+		<string>1</string>
+		<key>level</key>
+		<string>0</string>
+		<key>name</key>
+		<string>一级测试目录</string>
+		<key>parentId</key>
+		<string> </string>
+	</dict>
+	<dict>
+		<key>idd</key>
+		<string>2</string>
+		<key>level</key>
+		<string>1</string>
+		<key>name</key>
+		<string>二级测试目录</string>
+		<key>parentId</key>
+		<string>1</string>
+	</dict>
+	<dict>
+		<key>idd</key>
+		<string>3</string>
+		<key>level</key>
+		<string>2</string>
+		<key>name</key>
+		<string>三级测试目录</string>
+		<key>parentId</key>
+		<string>2</string>
+	</dict>
+	<dict>
+		<key>idd</key>
+		<string>1F9366A5174533B7</string>
+		<key>level</key>
+		<string>0</string>
+		<key>name</key>
+		<string>检验科</string>
+		<key>parentId</key>
+		<string> </string>
+	</dict>
+	<dict>
+		<key>idd</key>
+		<string>6CDBCC03C022DB5A</string>
+		<key>level</key>
+		<string>1</string>
+		<key>name</key>
+		<string>骨密度检查室</string>
+		<key>parentId</key>
+		<string>1F9366A5174533B7</string>
+	</dict>
+	<dict>
+		<key>idd</key>
+		<string>724C2274717037D3</string>
+		<key>level</key>
+		<string>2</string>
+		<key>name</key>
+		<string>脑电图室</string>
+		<key>parentId</key>
+		<string>6CDBCC03C022DB5A</string>
+	</dict>
+	<dict>
+		<key>idd</key>
+		<string>FFBB0A03A6AEB9F2</string>
+		<key>level</key>
+		<string>3</string>
+		<key>name</key>
+		<string>B超</string>
+		<key>parentId</key>
+		<string>724C2274717037D3</string>
+	</dict>
+</array>
+</plist>
