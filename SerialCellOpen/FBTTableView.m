@@ -158,7 +158,7 @@ static NSString *cellID=@"cellID";
     for (NSInteger i=0;i<self.allArrData.count;i++) {
         
         FBTCellModel *nextModel=self.allArrData[i];
-        if (modelData.EditCheckID==nextModel.parentId) {
+        if ([modelData.EditCheckID isEqualToString: nextModel.parentId]) {
             count++;
         }
     }
@@ -184,7 +184,7 @@ static NSString *cellID=@"cellID";
     //小于总数组
     for (NSInteger i=0;i<self.allArrData.count;i++) {
         FBTCellModel *nextModel=self.allArrData[i];
-        if(selectModel.EditCheckID==nextModel.parentId){ // 选择的cell的ID=所有数据中模型的父节点  如果存在就说明当前选择的模型的id等于某些模型的父节点。且将这个模型的isOpen更改，展开他们。
+        if([selectModel.EditCheckID isEqualToString: nextModel.parentId]){ // 选择的cell的ID=所有数据中模型的父节点  如果存在就说明当前选择的模型的id等于某些模型的父节点。且将这个模型的isOpen更改，展开他们。
             //nextModel一定是它的子节点，它的子节点一定isOpen 都是NO  而最初的section的isOpen变为了NO。
             nextModel.isOpen=!nextModel.isOpen;
             if (nextModel.isOpen) {
@@ -233,7 +233,9 @@ static NSString *cellID=@"cellID";
 -(NSUInteger)deleteDataInShaowDataArr:(FBTCellModel *)selectModel{
     
     NSInteger startIndex=[self.showArrData indexOfObject:selectModel]+1;
+    NSLog(@"%lu---%d",(unsigned long)[self.showArrData indexOfObject:selectModel],startIndex);
     NSInteger endIndex=startIndex;
+    NSLog(@"%ld",(long)endIndex);
     for (NSInteger i=startIndex; i<self.showArrData.count; i++) {
         FBTCellModel *model=self.showArrData[i];
         model.isOpen=NO;
@@ -242,6 +244,7 @@ static NSString *cellID=@"cellID";
         }
         else break;
     }
+    
     NSRange deleteWithRang={startIndex,endIndex-(startIndex)};
     [self.showArrData removeObjectsInRange:deleteWithRang]; // 通过区间删除数据中的元素
     
