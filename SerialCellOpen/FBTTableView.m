@@ -119,15 +119,16 @@ static NSString *cellID=@"cellID";
  *  @param tableView TableView对象
  */
 -(void)setCellIsSelectAndNor:(UITableViewCell *)changeCell modelData:(FBTCellModel *)modelData tableView:(UITableView *)tableView{
+    UIImageView *choiceImage=[[UIImageView alloc]initWithFrame:CGRectMake(0, 0,12,6)];
+    choiceImage.image=[UIImage imageNamed:@"upArrow"];
     for (NSInteger i=0;i<self.allArrData.count;i++) {
         FBTCellModel *nextModel=self.allArrData[i];
         NSLog(@"%@-----%@",modelData.EditCheckID,nextModel.parentId);
         //遍历全部的数据和已经显示的数据 即全部数据的父级节点和当前模型的id。
         if ([modelData.EditCheckID isEqualToString: nextModel.parentId]) {
-            UIImageView *choiceImage=[[UIImageView alloc]initWithFrame:CGRectMake(0, 0,12,6)];
-            choiceImage.image=[UIImage imageNamed:@"upArrow"];
             NSLog(@"显示可显示的cell");
             changeCell.accessoryView=choiceImage;
+            break;
         }
     }
     
